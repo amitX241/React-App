@@ -4,6 +4,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
+                sh 'sudo npm cache clean'
                 sh 'sudo npm install'
             }
         }
