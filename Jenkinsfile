@@ -29,7 +29,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building...'
-                sh 'sudo npm build'
+                sh 'sudo npm run build'
                 echo 'Building Complete'
             }
         }
