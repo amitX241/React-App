@@ -11,17 +11,26 @@ pipeline {
                 echo 'Initialization Complete'
             }
         }
-        stage('Build') {
+        stage('Installing Dependencies') {
             steps {
-                echo 'building....'
+                echo 'Installing....'
 //                  sh 'sudo npm cache clean --force'
                  sh 'sudo npm install'
-                echo 'build complete'
+                echo 'Installation Complete'
             }
         }
         stage('Test') {
             steps {
                 echo 'Testing...'
+                sh 'npm test -- --watchAll=false'
+                echo 'Testing Complete'
+            }
+        }
+        stage('Build') {
+            steps {
+                echo 'Building...'
+                sh 'sudo npm build'
+                echo 'Building Complete'
             }
         }
         stage('Deploy') {
@@ -30,16 +39,13 @@ pipeline {
             }
         }
     }
-    /*post{
-        always{
-            cleanWs()
-        }
+    post{
         success{
-            echo "====++++only when successful++++===="
+            echo "====++++Successful++++===="
         }
         failure{
-            echo "====++++only when failed++++===="
+            echo "====++++Failed++++===="
         }
-    }*/
+    }
     
 }
