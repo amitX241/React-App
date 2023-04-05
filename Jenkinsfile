@@ -14,8 +14,8 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'building....'
-//                 sh 'sudo npm cache clean --force'
-//                 sh 'sudo npm install'
+                 sh 'sudo npm cache clean --force'
+                 sh 'sudo npm install'
                 echo 'build complete'
             }
         }
