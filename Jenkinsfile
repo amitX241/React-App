@@ -38,15 +38,12 @@ pipeline {
                 echo 'Deploying...'
             }
         }
-        stage('Serve') {
-            steps {
-                echo 'Serving...'
-            }
-        }
     }
     post{
         success{
             echo "====++++Successful++++===="
+            echo "====+++++Serving+++++===="
+            
         }
         failure{
             echo "====++++Failed++++===="
