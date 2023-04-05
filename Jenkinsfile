@@ -41,11 +41,12 @@ pipeline {
     post{
         success{
             echo "====++++Successful++++===="
-            echo "====+++++Serving+++++===="
+            setBuildStatus("Build succeeded", "SUCCESS");
 //             sh "npm start"
         }
         failure{
             echo "====++++Failed++++===="
+            setBuildStatus("Build failed", "FAILURE");
         }
     }
     
