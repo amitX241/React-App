@@ -15,7 +15,7 @@ pipeline {
             steps {
                 echo 'Installing....'
 //                  sh 'sudo npm cache clean --force'
-                 sh 'sudo npm install'
+//                  sh 'sudo npm install'
                 echo 'Installation Complete'
             }
         }
