@@ -43,7 +43,7 @@ pipeline {
         success{
             echo "====++++Successful++++===="
             echo "====+++++Serving+++++===="
-            sh "npm start"
+//             sh "npm start"
         }
         failure{
             echo "====++++Failed++++===="
