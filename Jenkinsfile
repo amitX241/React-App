@@ -19,7 +19,7 @@ pipeline {
             }
         }
     }
-    post{
+    /*post{
         always{
             cleanWs()
         }
@@ -29,6 +29,6 @@ pipeline {
         failure{
             echo "====++++only when failed++++===="
         }
-    }
+    }*/
     
 }
