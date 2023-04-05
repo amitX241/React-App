@@ -18,5 +18,16 @@ pipeline {
             }
         }
     }
+    post{
+        always{
+            cleanWs()
+        }
+        success{
+            echo "====++++only when successful++++===="
+        }
+        failure{
+            echo "====++++only when failed++++===="
+        }
+    }
     
 }
