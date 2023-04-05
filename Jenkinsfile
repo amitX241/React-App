@@ -6,6 +6,7 @@ pipeline {
             steps {
                 echo 'Initialization....'
                 sh 'whoami'
+                sh 'sudo chown -R jenkins .'
                 sh 'ls -l'
                 echo 'Initialization Complete'
             }
