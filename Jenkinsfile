@@ -29,13 +29,18 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building...'
-                sh 'sudo npm run build'
+//                 sh 'sudo npm run build'
                 echo 'Building Complete'
             }
         }
         stage('Deploy') {
             steps {
                 echo 'Deploying...'
+            }
+        }
+        stage('Serve') {
+            steps {
+                echo 'Serving...'
             }
         }
     }
