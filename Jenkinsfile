@@ -21,6 +21,18 @@ pipeline {
                 echo 'Initialization Complete'
             }
         }
+        stage('run-parallel-branches') {
+            steps {
+                parallel(
+                    a: {
+                        echo "This is branch A"
+                    },
+                    b: {
+                        echo "This is branch B"
+                    }
+                )
+            }
+        }
         stage('Installing Dependencies') {
             steps {
                 echo 'Installing....'
